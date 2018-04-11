@@ -3,7 +3,6 @@ DSB2018 [ods.ai] topcoders
 
 ## How to run predict
 ```bash
-./predict_oof_trees.sh
 ./predict_test.sh
 ```
 
@@ -13,6 +12,7 @@ After it prediction will be in _stub_ folder. And submission files will be in _s
 ```bash
 ./train_all.sh
 ./tune_all.sh
+./predict_oof_trees.sh
 ```
 
 We use two stage training because we want to tune models on stage1 data released 11.04.
