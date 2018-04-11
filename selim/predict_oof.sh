@@ -9,15 +9,6 @@ python pred_oof.py \
 --models best_resnet101_2_fold0.h5 best_resnet101_2_fold1.h5 best_resnet101_2_fold2.h5 best_resnet101_2_fold3.h5
 
 
-########## InceptionResnetV2 sigmoid 2 channels #############
-python pred_oof.py \
---gpu 0 \
---preprocessing_function tf \
---network resnetv2 \
---out_masks_folder oof_resnetv2fpn \
---out_channels 2 \
---models best_resnetv2_fold0.h5 best_resnetv2_fold1.h5 best_resnetv2_fold2.h5 best_resnetv2_fold3.h5
-
 ########## Densenet169 softmax 2 channels #############
 python pred_oof.py \
 --gpu 0 \
