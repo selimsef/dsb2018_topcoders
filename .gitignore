@@ -157,3 +157,10 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+*.h5
+*.pth
+images_all
+masks_all
+labels_all
+folds.csv
+lgbm_models
