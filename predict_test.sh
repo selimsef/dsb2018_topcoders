@@ -6,6 +6,6 @@ pushd victor
 ./predict_test.sh
 popd
 
-pushd albu
+pushd albu/src
 ./predict_test.sh
 popd

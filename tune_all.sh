@@ -6,6 +6,6 @@ pushd victor
 ./tune_all.sh
 popd
 
-pushd albu
+pushd albu/src
 ./tune_all.sh
 popd
