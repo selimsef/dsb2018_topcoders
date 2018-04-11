@@ -2,10 +2,10 @@ pushd selim
 ./predict_test.sh
 popd
 
-pushd victor 
+pushd albu/src
 ./predict_test.sh
 popd
 
-pushd albu/src
+pushd victor 
 ./predict_test.sh
 popd
