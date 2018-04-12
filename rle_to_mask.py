@@ -29,7 +29,7 @@ def decode_submission(filename):
         rows, cols = pd.unique(mask_rles['Height'])[0], np.unique(mask_rles['Width'])[0]
         mask = rle_decode(rle_list=mask_rles['EncodedPixels'], mask_shape=(rows, cols), mask_dtype=np.int)
         mask = mask.astype(np.uint16)
-        cv2.imwrite(os.path.join(results_dir, test_id + '.tiff'), mask)
+        cv2.imwrite(os.path.join(results_dir, test_id + '.tif'), mask)
 
 
 if __name__ == '__main__':
