@@ -117,6 +117,8 @@ if __name__ == '__main__':
         total_cnt = 0
         im_idx = 0
         
+        empty_cnt = 0
+        
         for f in tqdm(sorted(listdir(test_pred_folder))):
             if path.isfile(path.join(test_pred_folder, f)) and '.png' in f:
                 img_id = f.split('.')[0]
@@ -177,8 +179,13 @@ if __name__ == '__main__':
                 cv2.imwrite(path.join(pred_folder, test_out_folders[sub_id], f.replace('.png', '.tif')), pred_labels)
                 
                 rle = list(pred_to_rles(pred_labels))
-                rles.extend(rle)
-                new_test_ids.extend([img_id] * len(rle))
+                if len(rle) == 0:
+                    empty_cnt += 1
+                    rles.extend([''])
+                    new_test_ids.extend([img_id])
+                else:
+                    rles.extend(rle)
+                    new_test_ids.extend([img_id] * len(rle))
                 
                 clr_labels = label2rgb(pred_labels, bg_label=0)
                 clr_labels *= 255
@@ -192,7 +199,7 @@ if __name__ == '__main__':
         sub['EncodedPixels'] = pd.Series(rles).apply(lambda x: ' '.join(str(y) for y in x))
         sub.to_csv(path.join(pred_folder, 'submission_{0}.csv'.format(sub_id)), index=False)
     
-        print('total_cnt', total_cnt, 'removed', removed, 'replaced', replaced)
+        print('total_cnt', total_cnt, 'removed', removed, 'replaced', replaced, 'empty:', empty_cnt)
         print(bst_k)
     
     elapsed = timeit.default_timer() - t0
