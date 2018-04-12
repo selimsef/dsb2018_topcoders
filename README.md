@@ -1,2 +1,27 @@
 # dsb2018_topcoders
-DSB2018 [ods.ai] topcoders
+DSB2018 [ods.ai] topcoders 
+
+## How to run predict
+unzip test data into data_test folder and
+```bash
+./predict_test.sh
+```
+
+After it prediction will be in _stub_ folder. And submission files will be in _stub_ folder. Individual model predictions will be in _predictions_ folder.
+
+## How to run training
+Before training please remove models from:
+* albu/weights
+* selim/nn_models
+* victor/nn_models
+* victor/lgbm_models
+
+after it run:
+```bash
+./train_all.sh
+./tune_all.sh
+./predict_oof_trees.sh
+```
+
+We use two stage training because we want to tune models on stage1 data released 11.04.
+Every script goes into every folder and runs scripts to train models.
