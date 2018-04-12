@@ -54,7 +54,7 @@ if __name__ == '__main__':
         final_mask = None
         for scale in range(1):
             fid = d
-            img = img_to_array(load_img(path.join(test_folder, fid, 'images', '{0}.png'.format(fid))))
+            img = cv2.imread(path.join(test_folder, fid, 'images', '{0}.png'.format(fid)), cv2.IMREAD_COLOR)[...,::-1]
 
             if final_mask is None:
                 final_mask = np.zeros((img.shape[0], img.shape[1], OUT_CHANNELS))
