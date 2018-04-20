@@ -9,6 +9,8 @@ class RawImageType(AbstractImageType):
     def __init__(self, paths, fn, fn_mapping, has_alpha):
         super().__init__(paths, fn, fn_mapping, has_alpha)
         self.im = imread(os.path.join(self.paths['images'], self.fn), mode='RGB')
+        if '646f5e00a2db3add97fb80a83ef3c07edd1b17b1b0d47c2bd650cdcab9f322c0' in fn:
+            self.im = cv2.imread(os.path.join(self.paths['images'], self.fn), cv2.IMREAD_COLOR)
         # self.im = 255 - self.im
         # self.clahe = CLAHE(1)
         # self.im = self.clahe(image=self.im)['image']
