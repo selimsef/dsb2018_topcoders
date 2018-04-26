@@ -1,13 +1,17 @@
 # dsb2018_topcoders
 DSB2018 [ods.ai] topcoders 
 
+You need to setup your environment first. Please install latest nvidia drivers, cuda 9 and cudnn 7.
+After it run setup_env.sh script
+
 ## How to run predict
 unzip test data into data_test folder and
 ```bash
 ./predict_test.sh
 ```
 
-After it prediction will be in _stub_ folder. And submission files will be in _stub_ folder. Individual model predictions will be in _predictions_ folder.
+Submission files will be in _predictions_ folder (submission_0.csv, submission_1.csv). 
+Individual model predictions will be also in _predictions_ folder.
 
 ## How to run training
 Before training please remove models from:
