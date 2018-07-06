@@ -1,8 +1,10 @@
-# dsb2018_topcoders
-DSB2018 [ods.ai] topcoders 
+
+# DSB2018 [ods.ai] topcoders 1st place solution 
+
+See also [solution desription on Kaggle](https://www.kaggle.com/c/data-science-bowl-2018/discussion/54741)
 
 You need to setup your environment first. Please install latest nvidia drivers, cuda 9 and cudnn 7.
-After it run setup_env.sh script
+After that run setup_env.sh script
 
 ## How to run predict
 unzip test data into data_test folder and
@@ -27,5 +29,5 @@ after it run:
 ./predict_oof_trees.sh
 ```
 
-We use two stage training because we want to tune models on stage1 data released 11.04.
+We use two stage training because we want to tune models on the stage1 data released 11.04.
 Every script goes into every folder and runs scripts to train models.
