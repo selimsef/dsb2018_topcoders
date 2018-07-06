@@ -1,7 +1,7 @@
 
 # DSB2018 [ods.ai] topcoders 1st place solution 
 
-See also [solution desription on Kaggle](https://www.kaggle.com/c/data-science-bowl-2018/discussion/54741)
+See also [solution description on Kaggle](https://www.kaggle.com/c/data-science-bowl-2018/discussion/54741)
 
 You need to setup your environment first. Please install latest nvidia drivers, cuda 9 and cudnn 7.
 After that run setup_env.sh script
