@@ -99,10 +99,11 @@ class BCEDiceJaccardLoss(nn.Module):
 
     def forward(self, input, target):
         loss = 0
+        sigmoid_input = torch.sigmoid(input)
         for k, v in self.weights.items():
-            if not v:
+            if not v: 
                 continue
-            val = self.mapping[k](input, target)
+            val = self.mapping[k](input if k == 'bce' else sigmoid_input, target)
             self.values[k] = val
             if k != 'bce':
                 loss += self.weights[k] * (1 - val)
