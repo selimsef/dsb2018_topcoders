@@ -1,7 +1,11 @@
 
 # DSB2018 [ods.ai] topcoders 1st place solution 
 
+## Model weights/annotated data
+[You can download the whole package (7.5G)](https://www.dropbox.com/s/qvtgbz0bnskn9wu/dsb2018_topcoders.zip?dl=0) that contains training data, nn models weights, GBT models.
+
 See also [solution description on Kaggle](https://www.kaggle.com/c/data-science-bowl-2018/discussion/54741)
+
 
 You need to setup your environment first. Please install latest nvidia drivers, cuda 9 and cudnn 7.
 After that run setup_env.sh script
@@ -31,3 +35,4 @@ after it run:
 
 We use two stage training because we want to tune models on the stage1 data released 11.04.
 Every script goes into every folder and runs scripts to train models.
+
